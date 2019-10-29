@@ -10,22 +10,23 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="Container">
-        {% for message in app.session.flashBag.get('info') %}
+    <div class="container">
+        {% for message in app.session.flashbag.get('info') %}
             <div class="alert alert-info">
                 {{ message }}
             </div>
         {% endfor %}
-        {% for message in app.session.flashBag.get('success') %}
+        {% for message in app.session.flashbag.get('success') %}
             <div class="alert alert-success">
                 {{ message }}
             </div>
         {% endfor %}
-        {% for message in app.session.flashBag.get('error') %}
+        {% for message in app.session.flashbag.get('error') %}
             <div class="alert alert-danger">
                 {{ message }}
             </div>
         {% endfor %}
+        <h1>Liste des todos</h1>
         <ol class="list-group">
             {% for nameTodo,contentTodo in app.session.get('todos') %}
                 <li class="list-group-item">
