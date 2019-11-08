@@ -7,10 +7,15 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
+/**
+ * Class TodoController
+ * @package App\Controller
+ * @Route("/todo")
+ */
 class TodoController extends AbstractController
 {
     /**
-     * @Route("/todo", name="todo")
+     * @Route("/", name="todo")
      */
     public function index(Request $request)
     {
@@ -35,7 +40,7 @@ class TodoController extends AbstractController
 
     /**
      * @param Request $request
-     * @Route("/todo/add/{name}/{content}", name="todo.add")
+     * @Route("/add/{name}/{content}", name="todo.add")
      */
     public function add(Request $request, $name, $content) {
         $session = $request->getSession();
@@ -57,7 +62,7 @@ class TodoController extends AbstractController
     /**
      * @param Request $request
      * @return Response
-     * @Route("/todo/vider", name="todo.vider")
+     * @Route("/vider", name="todo.vider")
      */
     public function viderSession(Request $request) {
         $request->getSession()->clear();
@@ -65,7 +70,11 @@ class TodoController extends AbstractController
     }
 
     /**
-     * @Route("/todo/update/{name}/{content}", name="todo.update")
+     * @Route(
+     *     "/update/{name}/{content}",
+     *      name="todo.update",
+     *      defaults={"content" : "new value"}
+     * )
      */
     public function update(Request $request, $name, $content) {
         // récupérer la session à travers l'objet request
@@ -88,7 +97,7 @@ class TodoController extends AbstractController
     }
 
     /**
-     * @Route("/todo/delete/{name}", name="todo.delete")
+     * @Route("/delete/{name}", name="todo.delete")
      */
     public function delete(Request $request, $name) {
         // récupérer la session à travers l'objet request
@@ -110,7 +119,7 @@ class TodoController extends AbstractController
         return $this->redirectToRoute('todo');
     }
     /**
-     * @Route("/todo/reset", name="todo.reset")
+     * @Route("/reset", name="todo.reset")
      */
     public function reset(Request $request) {
         // récupérer la session à travers l'objet request
