@@ -63,4 +63,66 @@ class TodoController extends AbstractController
         $request->getSession()->clear();
         return new Response("<h1>Session vidée</h>");
     }
+
+    /**
+     * @Route("/todo/update/{name}/{content}", name="todo.update")
+     */
+    public function update(Request $request, $name, $content) {
+        // récupérer la session à travers l'objet request
+        $session = $request->getSession();
+        //vérifie est ce qu'il y a une varibale dans la session qui
+        //s'appelle todo
+        if(!$session->has('todos')) {
+            $session->getFlashBag()->add('error', 'Session non encore initialisée :(');
+        } else {
+            $todos = $session->get('todos');
+            if(!isset($todos[$name])){
+                $session->getFlashBag()->add('error', " le todo de clé $name n'existe pas :(");
+            } else {
+                $todos[$name]=$content;
+                $session->set('todos', $todos);
+                $session->getFlashBag()->add('success', "Le Todo $name a été mis à jour avec suuccès :)");
+            }
+        }
+        return $this->redirectToRoute('todo');
+    }
+
+    /**
+     * @Route("/todo/delete/{name}", name="todo.delete")
+     */
+    public function delete(Request $request, $name) {
+        // récupérer la session à travers l'objet request
+        $session = $request->getSession();
+        //vérifie est ce qu'il y a une varibale dans la session qui
+        //s'appelle todo
+        if(!$session->has('todos')) {
+            $session->getFlashBag()->add('error', 'Session non encore initialisée :(');
+        } else {
+            $todos = $session->get('todos');
+            if(!isset($todos[$name])){
+                $session->getFlashBag()->add('error', " le todo de clé $name n'existe pas :(");
+            } else {
+                unset($todos[$name]);
+                $session->set('todos', $todos);
+                $session->getFlashBag()->add('success', "Le Todo $name a été supprimé avec suuccès :)");
+            }
+        }
+        return $this->redirectToRoute('todo');
+    }
+    /**
+     * @Route("/todo/reset", name="todo.reset")
+     */
+    public function reset(Request $request) {
+        // récupérer la session à travers l'objet request
+        $session = $request->getSession();
+        //vérifie est ce qu'il y a une varibale dans la session qui
+        //s'appelle todo
+        if(!$session->has('todos')) {
+            $session->getFlashBag()->add('error', 'Session non encore initialisée :(');
+        } else {
+                $session->clear();
+                $session->getFlashBag()->add('success', "Session réinitialisée avec suucès :)");
+        }
+        return $this->redirectToRoute('todo');
+    }
 }
