@@ -24,7 +24,7 @@ class PersonneController extends AbstractController
     }
 
     /**
-     * @Route("/detail/{id<\d+>}")
+     * @Route("/detail/{id<\d+>}", name="personne.detail")
      */
     public function detailPersonne(Personne $personne = null) {
         return $this->render('personne/detail.html.twig',
@@ -35,7 +35,7 @@ class PersonneController extends AbstractController
     }
 
     /**
-     * @Route("/delete/{id<\d+>}")
+     * @Route("/delete/{id<\d+>}", name="personne.delete")
      */
     public function deletePersonne(Personne $personne = null) {
         if ($personne) {
