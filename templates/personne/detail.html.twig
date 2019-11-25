@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {% if personne  %}
+    <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+            <strong class="d-inline-block mb-2 text-primary">Personne</strong>
+            <h3 class="mb-0">{{ personne.name }}</h3>
+            <div class="mb-1 text-muted">{{ personne.createdAt|date("Y|D[M") }}</div>
+            <p class="card-text mb-auto">{{ personne.cin }}</p>
+            <a href="#" class="stretched-link">Continue reading</a>
+        </div>
+        <div class="col-auto d-none d-lg-block">
+            <img src="{{ asset('images/default.png') }}"
+                width = "150px"
+                 height= "150px"
+                 class="rounded-circle"
+            >
+        </div>
+    </div>
+    {% else %}
+        <div class="alert alert-danger">
+            Personne innexistante
+        </div>
+    {% endif %}
+{% endblock %}
+
+{% block title %}
+
+{% endblock %}
+
