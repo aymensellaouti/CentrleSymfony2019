@@ -56,10 +56,34 @@ class PersonneController extends AbstractController
         $personne->setPath($path);
         $personne->setFirstname($firstname);
         $personne->setCin($cin);
-
         $manager = $this->getDoctrine()->getManager();
         $manager->persist($personne);
         $manager->flush();
+    }
 
+    /**
+     * @Route("/find/{name}/{limit?5}/{offset?0}", name="personne.find.name")
+     */
+    public function findPersonneByName($name, $limit, $offset) {
+        $repository = $this->getDoctrine()->getRepository(Personne::class);
+        $personnes = $repository->findBy(
+            array('name' => $name),
+            array('firstname' => 'Desc'),
+            $limit,
+            $offset
+        );
+        return $this->render('personne/index.html.twig', array('personnes' => $personnes));
+    }
+
+    /**
+     * @return \Symfony\Component\HttpFoundation\Response
+     * @Route("/stats", name="personne.stats")
+     */
+    public function statsPersonne(){
+        $repo = $this->getDoctrine()->getRepository(Personne::class);
+        $stats = $repo->getSumAVGAge();
+        return $this->render('personne/stats.html.twig', array(
+            'stats' => $stats
+        ));
     }
 }

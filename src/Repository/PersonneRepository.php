@@ -22,19 +22,15 @@ class PersonneRepository extends ServiceEntityRepository
     // /**
     //  * @return Personne[] Returns an array of Personne objects
     //  */
-    /*
-    public function findByExampleField($value)
+    public function getSumAVGAge()
     {
         return $this->createQueryBuilder('p')
-            ->andWhere('p.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('p.id', 'ASC')
-            ->setMaxResults(10)
+            ->select('SUM(p.age) as sumAge, AVG(p.age) as avgUserAge')
             ->getQuery()
-            ->getResult()
+            ->getScalarResult()
         ;
     }
-    */
+
 
     /*
     public function findOneBySomeField($value): ?Personne
