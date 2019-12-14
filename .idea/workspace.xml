@@ -2,15 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6e33ae6c-ed26-4776-8f38-e5c68e71e065" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Entity/TimeStamTrait.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/central1920.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/central1920.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/twig.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/twig.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/public/yarn.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/PersonneController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/PersonneController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/PersonneRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/PersonneRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Formation.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Formation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -150,6 +149,8 @@
       <path value="$PROJECT_DIR$/vendor/doctrine/data-fixtures" />
       <path value="$PROJECT_DIR$/vendor/doctrine/doctrine-fixtures-bundle" />
       <path value="$PROJECT_DIR$/vendor/fzaninotto/faker" />
+      <path value="$PROJECT_DIR$/vendor/api-platform/core" />
+      <path value="$PROJECT_DIR$/vendor/willdurand/negotiation" />
     </include_path>
   </component>
   <component name="ProjectId" id="1Uebd95Js7mmV6X1RRZkrGRKT9E" />
@@ -161,10 +162,10 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="E:/symfony 5/firstSf5" />
+    <property name="last_opened_file_path" value="E:/symfony 5/lastLts" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -214,6 +215,10 @@
       <workItem from="1575720099447" duration="59000" />
       <workItem from="1575720187321" duration="661000" />
       <workItem from="1575879398879" duration="9963000" />
+      <workItem from="1575898078954" duration="111000" />
+      <workItem from="1575968139330" duration="67000" />
+      <workItem from="1575983335500" duration="428000" />
+      <workItem from="1576258688512" duration="1432000" />
     </task>
     <task id="LOCAL-00001" summary="Correction Session + support de cours Symfony">
       <created>1573223472047</created>
@@ -243,7 +248,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574685203438</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Gestion des formulaires">
+      <created>1575898178798</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1575898178798</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TodoView">
@@ -262,7 +274,8 @@
     <MESSAGE value="Correction Session + support de cours Symfony" />
     <MESSAGE value="TWIG" />
     <MESSAGE value="crud" />
-    <option name="LAST_COMMIT_MESSAGE" value="crud" />
+    <MESSAGE value="Gestion des formulaires" />
+    <option name="LAST_COMMIT_MESSAGE" value="Gestion des formulaires" />
   </component>
   <component name="WindowStateProjectService">
     <state x="449" y="143" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1575720103686">
@@ -273,13 +286,26 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824@0.0.1536.824" timestamp="1575891252721" />
-    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1575720244806">
+    <state x="391" y="0" key="CommitChangelistDialog2" timestamp="1575898177916">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="391" y="0" key="CommitChangelistDialog2/0.0.1536.824/1920.0.1024.728@0.0.1536.824" timestamp="1575898177916" />
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1576259368596">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1575720244806" />
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1576259368596" />
     <state x="556" y="210" key="NewPhpClassDialog" timestamp="1575891159593">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="556" y="210" key="NewPhpClassDialog/0.0.1536.824@0.0.1536.824" timestamp="1575891159593" />
+    <state x="277" y="54" key="SettingsEditor" timestamp="1575968199210">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="277" y="54" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1575968199210" />
+    <state x="361" y="141" key="Vcs.Push.Dialog.v2" timestamp="1575898180905">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="361" y="141" key="Vcs.Push.Dialog.v2/0.0.1536.824/1920.0.1024.728@0.0.1536.824" timestamp="1575898180905" />
   </component>
 </project>
